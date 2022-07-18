@@ -39,7 +39,7 @@ export default {
 
 .upvote-container {
   border: 1px solid #dee2e6;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   display: grid;
   column-gap: 10px;
