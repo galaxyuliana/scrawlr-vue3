@@ -1,31 +1,22 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import UpvoteGroup from './components/UpvoteGroup.vue'
+
+export default {
+  components: {
+    UpvoteGroup
+  },
+  computed: {
+    getGroups() {
+      return this.$store.state.groups
+    }
+  }
+}
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <h1>Vue 3 JS Technical Project v1</h1>
+    <h4>Yuliana Shin</h4>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <UpvoteGroup v-for="group in getGroups" :key="group.id" v-bind="group" />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

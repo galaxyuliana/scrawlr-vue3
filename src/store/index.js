@@ -19,5 +19,18 @@ export default createStore({
         selected: false
       }
     ]
+  },
+  mutations: {
+    addUpvote(state, selectedGroupId) {
+      state.groups.find(function(e) {
+        return e.id == selectedGroupId;
+      }).upvotes++;
+    },
+    updateState(state, selectedGroupId) {
+      var selectedGroup = state.groups.find(function(e) {
+        return e.id == selectedGroupId;
+      });
+      selectedGroup.selected = !selectedGroup.selected;
+    }
   }
 });
